@@ -1,0 +1,48 @@
+/* Elabore um algoritmo que leia um vetor de 15 posições de números inteiros e pergunte ao usuário quais
+elementos ele deseja ver: se os elementos que estão em índices pares ou se os elementos que estão em
+índices ímpares. Mostre somente os elementos solicitados. */
+
+#include <iostream>
+using namespace std;
+
+int main() {
+  bool pass = false;
+  char resp;
+  int i;
+  int v[15] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
+
+  do{
+    
+    cout << "indice i-impar ou p-par: " << endl;
+    cin >> resp;
+
+    switch(resp){
+
+      case 'i':
+
+      for (i = 0; i < 15; i++){
+        if (i % 2 != 1){
+          cout << v[i] << ", ";
+        }
+
+      }
+      pass = true;
+      break;
+
+      case 'p': 
+
+      for (i = 0; i < 15; i++){
+        if (i % 2 == 0){
+          cout << v[i] << ", ";
+        }
+      }
+      pass = true;
+      
+      break;
+
+      default:
+      cout << "respostá inválida." << endl;
+
+    }
+  }while(pass == false);
+}

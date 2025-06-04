@@ -1,0 +1,43 @@
+/*Elabore um algoritmo que leia um vetor A de 20 posições. Em seguida, trocar (armazenando em um novo
+vetor B) o primeiro elemento com o último, o segundo com o penúltimo, o terceiro com o antepenúltimo, e
+assim sucessivamente. Ao final, escreva os vetores A e B.
+
+(ficou um pouco em aberto pela minha interpretação, então colocarei os dois casos.)
+*/
+#include <iostream>
+using namespace std;
+
+int main() {
+  int va[20], vb[20], i, aux, cont = 19;
+  
+for (i = 0; i < 20; i++){
+  cin >> va[i];
+}
+
+for (i = 0; i < 20; i++){
+  vb[i] = va[i];
+}
+
+/*for (i = 0; i < 20; i++){
+  aux = vb[cont];
+  vb[cont] = va[i];
+  va[i] = aux;
+  cont--;
+}
+*/
+
+for (i = 0; i < 20; i++){
+  va[i] = vb[cont];
+  cont--;
+}
+
+cout << "a: " << endl ;
+for (i = 0; i < 20; i++){
+  cout << va[i] << " ";
+}
+
+cout  << endl << "b: " << endl ;
+for (i = 0; i < 20; i++){
+  cout << vb[i] << " ";
+}
+}

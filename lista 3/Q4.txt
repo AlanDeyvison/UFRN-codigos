@@ -1,0 +1,37 @@
+/* Elabore um algoritmo para ler um vetor A de 20 números inteiros e obter a maior diferença entre dois
+elementos consecutivos desse vetor. Ao final, escreva a maior diferença e os índices dos respectivos
+elementos. */
+
+#include <iostream>
+using namespace std;
+
+int main() {
+  int a[5]{0, 10, 3, 4, 28};
+  int i, i2, maior = 0, dif, indice;
+
+  for (i2 = 0; i2 < 5; i2++){
+
+    dif = 0;
+    
+    if (i2 != 4){
+      
+      if (i2 == 0){
+        for (i = a[i2]; i < a[i2 +1]; i++ ){
+          dif++;
+        }
+         indice = i2;
+         maior = dif;
+      }else{
+        for (i = a[i2]; i < a[i2 + 1]; i++){
+          dif++;
+        }
+        
+        if(dif > maior){
+          maior = dif;
+          indice = i2;
+        }
+      }
+    }
+  } 
+  cout << "maior diferença: " << maior << endl << "indices: " << indice << " e " << indice + 1;
+}

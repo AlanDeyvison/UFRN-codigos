@@ -1,0 +1,28 @@
+/* Elabore um algoritmo que leia e mostre um vetor de 20 elementos inteiros. A seguir, conte quantos valores
+pares existem no vetor e troque cada um desses elementos por 0. Em seguida escreva o vetor final.  */
+
+#include <iostream>
+using namespace std;
+
+int main() {
+  int v[4], x, i;
+
+  for (i = 0; i < 4; i++){
+  cout << "valor: " << endl;
+  cin >> x;
+  v[i] = x;
+  }
+  
+  cout <<  "velho: ";
+  for(i = 0; i < 4; i++){
+    cout << v[i] << ", ";
+  }
+
+  cout << "novo: ";
+  for(i = 0; i < 4; i++){
+    if(v[i] % 2 == 0){
+    v[i] = 0;
+  }
+  cout << v[i] << ", ";
+  }
+}

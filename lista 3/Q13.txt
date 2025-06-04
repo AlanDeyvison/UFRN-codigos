@@ -1,0 +1,76 @@
+/*
+ALAN DEYVISON DE FREITAS PESSOA	
+
+Elabore um algoritmo que:
+Solicite um número inteiro N ao usuário.
+Declare um vetor V com N elementos inteiros.
+Gere os elementos do vetor de tal forma que o primeiro seja N e os próximos sejam sempre iguais ao dobro
+do anterior.
+Solicite um número inteiro X ao usuário e busque este elemento no vetor. Caso exista, troque X pelo menor
+elemento existente no vetor e o menor elemento por X. Caso não exista, informe ao usuário. Mostre o vetor
+antes e depois da mudança. */
+
+#include <iostream>
+using namespace std;
+
+int main() {
+  bool pass = false;
+  int n, x, i = 0, cont, mult = 2, menor, aux;
+  cout << "vetor: " << endl;
+  cin >> n;
+
+  int v [n], va[n];
+
+  cout << "valor: " << endl;
+  cin >> x;
+
+  for(i = 0; i < n ; i++){
+    v[i] = n;
+    va[i] = n;
+  }
+  
+  for(i = 0; i < n; i++){
+    if (i == 0){
+
+    }else{
+      v[i] *= mult;
+      va[i] *= mult;
+      mult += 2;
+    }
+  }
+
+  cont = 0;
+  do{
+    if (v[cont] == x){
+      pass = true;
+    }
+    cont++;
+  }while(cont < n - 1 && pass == false );
+
+  for(i = 0; i < n; i++){
+    if (i == 0){
+    menor = v[i];
+    }else{
+      if(menor > v[i]){
+        menor = v[i];
+        
+      }
+    }
+  }
+    if(pass == true){
+      aux = menor;
+      menor = 0;
+      v[menor] = v[cont - 1];
+      v[cont - 1] = aux; 
+    }else{
+      cout << "não tinha igual.";
+  }
+
+  for (i = 0; i < n; i++){
+    cout << "antigo: " << va[i] << ", " << endl;
+  }
+  
+  for (i = 0; i < n; i++){
+    cout << "novo: " << v[i] << ", " << endl; 
+  }
+}
